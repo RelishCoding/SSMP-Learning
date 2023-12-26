@@ -10,6 +10,13 @@
         id属性表示给bean起名字
         class属性表示给bean定义类型-->
     <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl" />
-    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl" />
+
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl" >
+        <!--7.配置server与dao的关系-->
+        <!--property标签表示配置当前bean的属性
+            name属性表示配置哪一个具体的属性
+            ref属性表示参照哪一个bean-->
+        <property name="bookDao" ref="bookDao" />
+    </bean>
 
 </beans>
